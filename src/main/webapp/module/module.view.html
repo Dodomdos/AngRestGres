@@ -1,0 +1,71 @@
+<div class="col-md-12 col-md-offset-3">
+	<h2>Module Management</h2>
+
+	<form name="form" ng-submit="vm.moduleaddedit()" role="form">
+		<div class="form-group"
+			ng-class="{ 'has-error': form.moduleName.$dirty && form.moduleName.$error.required }">
+			<label for="moduleName">Module name</label> <input type="text"
+				name="moduleName" id="moduleName" class="form-control"
+				ng-model="vm.module.moduleName" required /> <span
+				ng-show="form.moduleName.$dirty && form.moduleName.$error.required"
+				class="help-block">Module name is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.moduleDescription.$dirty && form.moduleDescription.$error.required }">
+			<label for="moduleDescription">Module Description</label> <input
+				type="text" name="moduleDescription" id="moduleDescription"
+				class="form-control" ng-model="vm.module.moduleDescription" required />
+			<span
+				ng-show="form.moduleDescription.$dirty && form.moduleDescription.$error.required"
+				class="help-block">Module Description is required</span>
+		</div>
+
+		<div class="form-actions">
+			<button type="submit" ng-disabled="form.$invalid || vm.dataLoading"
+				class="btn btn-primary">Submit</button>
+			<a href="#!/home" class="btn btn-link">Return</a>
+		</div>
+
+	</form>
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Module Name</th>
+					<th>Module Description</th>
+					<th>Operation</th>
+					<th>Operation</th>
+				</tr>
+
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="module in vm.modulelist">
+
+					<td>{{ module.moduleName }}</td>
+					<td>{{ module.moduleDescription }}</td>
+
+					<td><input type="button" value="Edit"
+						ng-click="vm.editModule(module)" class="btn btn-primary"></td>
+					<td><input type="button" value="Delete"
+						ng-click="vm.deleteModule(module)" class="btn btn-primary">
+					</td>
+
+				</tr>
+
+			</tbody>
+		</table>
+	</div>
+
+</div>
+
+
+

@@ -1,0 +1,189 @@
+<div class="col-md-12 col-md-offset-3">
+	<h2>Lead List Management</h2>
+
+	<form name="form" ng-submit="vm.leadlistaddedit()" role="form">
+		<div class="form-group"
+			ng-class="{ 'has-error': form.lead_name.$dirty && form.lead_name.$error.required }">
+			<label for="lead_name">Lead List name</label> <input type="text"
+				name="lead_name" id="lead_name" class="form-control"
+				ng-model="vm.lead.lead_name" required /> <span
+				ng-show="form.lead_name.$dirty && form.lead_name.$error.required"
+				class="help-block">Lead List name is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.designation.$dirty && form.designation.$error.required }">
+			<label for="designation">Designation</label> <input type="text"
+				name="designation" id="designation" class="form-control"
+				ng-model="vm.lead.designation" required /> <span
+				ng-show="form.designation.$dirty && form.designation.$error.required"
+				class="help-block">Designation is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.company_name.$dirty && form.company_name.$error.required }">
+			<label for="company_name">Company Name</label> <input type="text"
+				name="company_name" id="company_name" class="form-control"
+				ng-model="vm.lead.company_name" required /> <span
+				ng-show="form.company_name.$dirty && form.company_name.$error.required"
+				class="help-block">Company Name is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.country.$dirty && form.country.$error.required }">
+			<label for="country">Country Name</label> <input type="text"
+				name="country" id="country" class="form-control"
+				ng-model="vm.lead.country" required /> <span
+				ng-show="form.country.$dirty && form.country.$error.required"
+				class="help-block">Country Name is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.company_website.$dirty && form.company_website.$error.required }">
+			<label for="company_website">Company Website</label> <input
+				type="text" name="company_website" id="company_website"
+				class="form-control" ng-model="vm.lead.company_website" required />
+			<span
+				ng-show="form.company_website.$dirty && form.company_website.$error.required"
+				class="help-block">Company Website is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.telephone.$dirty && form.telephone.$error.required }">
+			<label for="telephone">Telephone Number</label> <input type="text"
+				name="telephone" id="telephone" class="form-control"
+				ng-model="vm.lead.telephone" required /> <span
+				ng-show="form.telephone.$dirty && form.telephone.$error.required"
+				class="help-block">Telephone Number is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.email.$dirty && form.email.$error.required }">
+			<label for="email">Email</label> <input type="text" name="email"
+				id="email" class="form-control" ng-model="vm.lead.email" required />
+			<span ng-show="form.email.$dirty && form.email.$error.required"
+				class="help-block">Email is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.areaoi.$dirty && form.areaoi.$error.required }">
+			<label for="areaoi">Area of Interest</label> <input type="text"
+				name="areaoi" id="areaoi" class="form-control"
+				ng-model="vm.lead.areaoi" required /> <span
+				ng-show="form.areaoi.$dirty && form.areaoi.$error.required"
+				class="help-block">Area of Interest is required</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.remarks.$dirty && form.remarks.$error.required }">
+			<label for="remarks">Remarks</label> <input type="text"
+				name="remarks" id="remarks" class="form-control"
+				ng-model="vm.lead.remarks" required /> <span
+				ng-show="form.remarks.$dirty && form.remarks.$error.required"
+				class="help-block">Remarks</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.next_date.$dirty && form.next_date.$error.required }">
+			<label for="next_date">Next Follow up Date</label> <input type="text"
+				name="next_date" id="next_date" class="form-control"
+				ng-model="vm.lead.next_date" required /> <span
+				ng-show="form.next_date.$dirty && form.next_date.$error.required"
+				class="help-block">Next Follow up Date</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.status.$dirty && form.status.$error.required }">
+			<label for="status">Status</label> <input type="text" name="status"
+				id="status" class="form-control" ng-model="vm.lead.status" required />
+			<span ng-show="form.status.$dirty && form.status.$error.required"
+				class="help-block">Status</span>
+		</div>
+
+		<div class="form-group"
+			ng-class="{ 'has-error': form.degree.$dirty && form.degree.$error.required }">
+			<label for="degree">Degree</label> <input type="text" name="degree"
+				id="degree" class="form-control" ng-model="vm.lead.degree" required />
+			<span ng-show="form.degree.$dirty && form.degree.$error.required"
+				class="help-block">Degree</span>
+		</div>
+
+		<div class="form-actions">
+			<button type="submit" ng-disabled="form.$invalid || vm.dataLoading"
+				class="btn btn-primary">Submit</button>
+			<a href="#!/home" class="btn btn-link">Return</a>
+		</div>
+
+	</form>
+
+
+	<!-- 
+	<table ng-table="vm.tableParams" class="table" show-filter="true">
+    <tr ng-repeat="lead in $data">
+        <td title="'Name'" filter="{ name: 'text'}" sortable="'name'">
+            {{lead.lead_name}}</td>
+        <td title="'Designation'" filter="{ Designation: 'text'}" sortable="'Designation'">
+            {{lead.designation}}</td>
+    </tr>
+	</table>
+ 	 -->
+
+
+	<br>
+	<br>
+	<br>
+	<br>
+	<br>
+	
+	<div class="container">
+		<table class="table">
+			<thead>
+				<tr>
+					<th>Lead Name</th>
+					<th>Designation</th>
+					<th>Company Name</th>
+					<th>Country Name</th>
+					<th>Company Website</th>
+					<th>Telephone Number</th>
+					<th>Email</th>
+					<th>Area of Interest</th>
+					<th>Remarks</th>
+					<th>Next Follow up Date</th>
+					<th>Status</th>
+					<th>Degree</th>
+					<th>Operation</th>
+					<th>Operation</th>
+				</tr>
+			</thead>
+
+			<tbody>
+				<tr ng-repeat="lead in vm.leadlist">
+
+					<td>{{ lead.lead_name }}</td>
+					<td>{{ lead.designation }}</td>
+					<td>{{ lead.company_name }}</td>
+					<td>{{ lead.country }}</td>
+					<td>{{ lead.company_website }}</td>
+					<td>{{ lead.telephone }}</td>
+					<td>{{ lead.email }}</td>
+					<td>{{ lead.areaoi }}</td>
+					<td>{{ lead.remarks }}</td>
+					<td>{{ lead.next_date}}</td>
+					<td>{{ lead.status }}</td>
+					<td>{{ lead.degree }}</td>
+
+
+					<td><input type="button" value="Edit"
+						ng-click="vm.editLeadList(lead)" class="btn btn-primary">
+					</td>
+					<td><input type="button" value="Delete"
+						ng-click="vm.deleteLeadList(lead)" class="btn btn-primary">
+					</td>
+
+				</tr>
+			</tbody>
+		</table>
+	</div>
+
+</div>
+

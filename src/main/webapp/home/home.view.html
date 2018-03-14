@@ -1,0 +1,78 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <title>Welcome Home</title>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  
+  
+  <style>
+    /* Set height of the grid so .sidenav can be 100% (adjust if needed) */
+    .row.content {height: 500px}
+    
+    /* Set gray background color and 100% height */
+    .sidenav {
+      background-color: #f1f1f1;
+      height: 100%;
+    }
+    
+    /* Set black background color, white text and some padding */
+    footer {
+      background-color: #555;
+      color: white;
+      padding: 15px;
+    }
+    
+    /* On small screens, set height to 'auto' for sidenav and grid */
+    @media screen and (max-width: 750px) {
+      .sidenav {
+        height: auto;
+        padding: 15px;
+      }
+      .row.content {height: auto;} 
+    }
+  </style>
+</head>
+<body>
+
+<div class="container-fluid">
+  <div class="row content">
+    <div class="col-sm-4 sidenav">
+      <h4>{{vm.user.firstName}} {{vm.user.lastName}}</h4>     
+      <div class="input-group">
+        <input type="text" class="form-control" placeholder="Welcome to CRMARP..">
+        <span class="input-group-btn">
+          <button class="btn btn-default" type="button">
+            <span class="glyphicon glyphicon-search"></span>
+          </button>
+        </span>
+      </div>    
+      
+      <ul class="nav nav-pills nav-stacked" >
+        <li class="active" ng-repeat="k in vm.fields"><a href="#!/{{k}}">{{k}}</a>
+        </li>
+       </ul><br>
+      
+    </div>
+
+    <div class="col-sm-6">
+      <h4><small>RECENT ACTIVITY</small></h4>
+      <hr>
+      <h5>Accessed the following Modules</h5>
+      <h5><span class="glyphicon glyphicon-time"></span></h5>
+      <h5><span class="label label-danger">
+      </span> <span class="label label-primary">
+      </span>
+      </h5><br>
+      <br><br>
+      </div>
+      
+  </div>
+</div>
+
+<footer class="container-fluid">
+  <h6>@copyright CRMARP</h6>
+</footer>
+
+</body>
+</html>
